@@ -10,11 +10,7 @@ export function Header() {
       <img className="logo" src={logo} alt="" />
       <ul>
         <li>
-          {" "}
-          <Link
-            to="/"
-            className={location.pathname === "/home" ? "active" : ""}
-          >
+          <Link to="/" className={location.pathname === "/" ? "active" : ""}>
             Home
           </Link>
         </li>
@@ -35,7 +31,6 @@ export function Header() {
           </Link>
         </li>
         <li>
-          {" "}
           <Link
             to="/articles"
             className={location.pathname === "/articles" ? "active" : ""}

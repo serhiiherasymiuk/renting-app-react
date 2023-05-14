@@ -1,11 +1,11 @@
 import React from "react";
 import "./Home.css";
-import { Header } from "../Header/Header";
+import { Banner } from "./Banner/Banner";
 
 export function Home() {
   return (
     <div className="Home">
-      <Header></Header>
+      <Banner></Banner>
     </div>
   );
 }

@@ -3,13 +3,19 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Home } from "./components/Home/Home";
 import { Route, Routes } from "react-router-dom";
+import { Header } from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <header>
+        <Header></Header>
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </main>
     </div>
   );
 }
