@@ -1,0 +1,36 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 60px;
+}
+
+.Header ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  padding: 0;
+}
+
+.Header li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Header button {
+  padding: 10px 40px;
+  background-color: #0fb3af;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
