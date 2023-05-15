@@ -1,0 +1,33 @@
+.Reasons {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.Reasons div:first-child p:first-child {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0fb3af;
+}
+
+.Reasons > div:first-child p:last-child {
+  padding: 0 10%;
+}
+
+.Reasons > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Reasons > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+.Reasons > div:last-child > div p {
+  padding-top: 20px;
+}

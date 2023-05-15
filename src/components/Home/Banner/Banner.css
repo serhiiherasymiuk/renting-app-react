@@ -8,10 +8,6 @@
   gap: 10px;
 }
 
-.Banner p {
-  margin: 0;
-}
-
 .Banner p:first-child {
   font-size: 40px;
   font-weight: bold;
@@ -28,7 +24,7 @@
 .Banner button {
   font-weight: bold;
   padding: 15px 40px;
-  margin-top: 20px;
+  margin-top: 10px;
   background-color: #3c3c3b;
   border: none;
   border-radius: 5px;
