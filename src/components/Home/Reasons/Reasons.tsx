@@ -9,7 +9,7 @@ export function Reasons() {
   return (
     <div className="Reasons">
       <div>
-        <p>Why Review Your Student Accommodation?</p>
+        <h2>Why Review Your Student Accommodation?</h2>
         <p>
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever

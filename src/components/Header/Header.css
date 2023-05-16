@@ -26,6 +26,7 @@
 }
 
 .Header button {
+  font-weight: bold;
   padding: 10px 40px;
   background-color: #0fb3af;
   border: none;

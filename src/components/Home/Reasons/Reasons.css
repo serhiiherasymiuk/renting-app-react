@@ -5,14 +5,8 @@
   gap: 50px;
 }
 
-.Reasons div:first-child p:first-child {
-  font-size: 30px;
-  font-weight: bold;
-  color: #0fb3af;
-}
-
 .Reasons > div:first-child p:last-child {
-  padding: 0 10%;
+  padding: 0 15%;
 }
 
 .Reasons > div:first-child {

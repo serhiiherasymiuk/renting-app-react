@@ -6,7 +6,7 @@ export function Banner() {
   return (
     <div className="Banner">
       <div>
-        <p>Share Your Student Renting Experience</p>
+        <h1>Share Your Student Renting Experience</h1>
         <p>Help other students make the right rental choice</p>
         <button>Search Now</button>
       </div>
@@ -14,4 +14,3 @@ export function Banner() {
     </div>
   );
 }
- 
