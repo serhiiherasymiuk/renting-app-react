@@ -1,11 +1,12 @@
-import { Property } from "../types/property";
+import { IProperty } from "../types/property";
 
-const mockData: Property[] = [
+let properties: IProperty[] = [
   {
     id: 1,
     title: "Luxury Villa",
     address: "123 Main Street",
-    photo: "https://example.com/photos/1.jpg",
+    photo:
+      "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 1, rate: 4 },
       { id: 2, rate: 5 },
@@ -16,7 +17,8 @@ const mockData: Property[] = [
     id: 2,
     title: "Beachfront Condo",
     address: "456 Ocean Avenue",
-    photo: "https://example.com/photos/2.jpg",
+    photo:
+      "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 4, rate: 4 },
       { id: 5, rate: 4 },
@@ -27,7 +29,8 @@ const mockData: Property[] = [
     id: 3,
     title: "Cozy Cottage",
     address: "789 Forest Lane",
-    photo: "https://example.com/photos/3.jpg",
+    photo:
+      "https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 7, rate: 5 },
       { id: 8, rate: 3 },
@@ -38,7 +41,8 @@ const mockData: Property[] = [
     id: 4,
     title: "Mountain Retreat",
     address: "321 Summit Road",
-    photo: "https://example.com/photos/4.jpg",
+    photo:
+      "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 10, rate: 5 },
       { id: 11, rate: 5 },
@@ -49,7 +53,8 @@ const mockData: Property[] = [
     id: 5,
     title: "Urban Loft",
     address: "567 City Avenue",
-    photo: "https://example.com/photos/5.jpg",
+    photo:
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 13, rate: 4 },
       { id: 14, rate: 4 },
@@ -60,7 +65,8 @@ const mockData: Property[] = [
     id: 6,
     title: "Rustic Cabin",
     address: "890 Woodland Drive",
-    photo: "https://example.com/photos/6.jpg",
+    photo:
+      "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
       { id: 16, rate: 3 },
       { id: 17, rate: 5 },
@@ -69,4 +75,4 @@ const mockData: Property[] = [
   },
 ];
 
-export default mockData;
+export default properties;

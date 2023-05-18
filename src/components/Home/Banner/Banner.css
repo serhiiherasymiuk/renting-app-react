@@ -20,14 +20,3 @@
 .Banner img {
   width: 100%;
 }
-
-.Banner button {
-  font-weight: bold;
-  padding: 15px 40px;
-  margin-top: 10px;
-  background-color: #3c3c3b;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-}

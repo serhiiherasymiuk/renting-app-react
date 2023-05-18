@@ -1,4 +1,4 @@
-export interface Rating {
+export interface IRating {
   id: number;
   rate: number;
 }

@@ -33,7 +33,7 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button>
+              <button className="styled-button">
                 Know More <img src={arrow} alt="" />
               </button>
             </div>
@@ -50,7 +50,7 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button>
+              <button className="styled-button">
                 Know More <img src={arrow} alt="" />
               </button>
             </div>
@@ -71,13 +71,14 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button>
+              <button className="styled-button">
                 Know More <img src={arrow} alt="" />
               </button>
             </div>
           </div>
         </div>
       </div>
+      <button>Get Started</button>
     </div>
   );
 }
