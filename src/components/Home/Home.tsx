@@ -4,6 +4,7 @@ import { Banner } from "./Banner/Banner";
 import { Reasons } from "./Reasons/Reasons";
 import { Works } from "./Works/Works";
 import { Recently } from "./Recently/Recently";
+import { OurArticles } from "./OurArticles/OurArticles";
 
 export function Home() {
   return (
@@ -12,6 +13,7 @@ export function Home() {
       <Reasons></Reasons>
       <Works></Works>
       <Recently></Recently>
+      <OurArticles></OurArticles>
     </div>
   );
 }

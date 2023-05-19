@@ -1,0 +1,62 @@
+.OurArticles {
+  background-color: #fbfbfb;
+  padding: 50px;
+  margin: 0 5%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.OurArticles > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card {
+  margin-bottom: -200px;
+}
+
+.article-card:last-child {
+  margin-bottom: -300px;
+}
+
+.article-card > div {
+  background-color: rgba(255, 255, 255, 0.877);
+  position: relative;
+  bottom: 300px;
+  width: 500px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 10px;
+  left: 600px;
+}
+
+.article-card > img {
+  width: 1200px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.article-card:nth-child(even) > div {
+  left: 50px;
+}
+
+.article-card-user > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.article-card-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.article-card-user > button {
+  margin: 0;
+}
