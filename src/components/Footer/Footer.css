@@ -1,0 +1,37 @@
+.Footer {
+  margin-top: 100px;
+  background-color: #fbfbfb;
+  padding: 0 100px;
+  padding-top: 50px;
+}
+
+.Footer h3 {
+  font-weight: bold;
+}
+
+.Footer p {
+  display: flex;
+  gap: 20px;
+}
+
+.Footer hr {
+  margin: 30px 0;
+}
+
+.Footer > div {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+.Footer > div > div {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Footer > div:last-child {
+  justify-content: center;
+  padding-bottom: 30px;
+}

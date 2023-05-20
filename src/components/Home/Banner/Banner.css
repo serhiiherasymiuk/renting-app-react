@@ -1,0 +1,22 @@
+.Banner > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -200px;
+  top: 250px;
+  gap: 10px;
+}
+
+.Banner h1:first-child {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.Banner p:nth-child(2) {
+  font-size: 20px;
+}
+
+.Banner img {
+  width: 100%;
+}

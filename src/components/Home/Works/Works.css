@@ -1,0 +1,84 @@
+.Works {
+  background-color: #fbfbfb;
+  padding: 50px;
+  margin: 0 5%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.vector-right {
+  position: relative;
+  top: -40px;
+}
+
+.vector-left {
+  position: relative;
+  top: -50px;
+}
+
+.work-card {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.work-card:nth-child(1) {
+  gap: 20%;
+}
+
+.work-card:nth-child(3) {
+  gap: 11%;
+  margin-top: -100px;
+}
+
+.work-card:nth-child(5) {
+  gap: 13%;
+  margin-top: -130px;
+}
+
+.work-card > div {
+  display: flex;
+  gap: 30px;
+}
+
+.work-card > div > img {
+  padding-top: 5px;
+}
+
+.work-card {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.work-card > div > div p {
+  padding-top: 10px;
+}
+
+button {
+  width: 160px;
+}
+
+.styled-button {
+  width: 140px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #0fb3af;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,51 @@
+.Header {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+}
+
+.Header ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  padding: 0;
+}
+
+.Header li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Header button {
+  font-weight: bold;
+  padding: 10px 40px;
+  background-color: #0fb3af;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #0fb3af;
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}

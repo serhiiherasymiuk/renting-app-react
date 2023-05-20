@@ -1,0 +1,21 @@
+.Reasons {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.Reasons > div:first-child p:last-child {
+  padding: 0 15%;
+}
+
+.Reasons > div:last-child {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+.Reasons > div:last-child > div p {
+  padding-top: 20px;
+}
