@@ -33,7 +33,7 @@ export function OurArticles() {
                     {users.filter((u) => u.id === article.userId)[0].name}{" "}
                     {users.filter((u) => u.id === article.userId)[0].surname}
                   </p>
-                  <p>{article.date.toString().slice(3, 24)}</p>
+                  <p>{article.date.toString().slice(3, 21)}</p>
                 </div>
                 <button className="styled-button">Read More</button>
               </div>

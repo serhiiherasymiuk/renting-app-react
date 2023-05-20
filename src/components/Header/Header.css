@@ -7,11 +7,6 @@
   padding: 10px 60px;
 }
 
-.logo {
-  width: 150px;
-  height: 60px;
-}
-
 .Header ul {
   display: flex;
   list-style: none;

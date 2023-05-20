@@ -8,8 +8,8 @@ let properties: IProperty[] = [
     photo:
       "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
-      { id: 1, rate: 4 },
-      { id: 2, rate: 5 },
+      { id: 1, rate: 1 },
+      { id: 2, rate: 1 },
       { id: 3, rate: 3 },
     ],
   },

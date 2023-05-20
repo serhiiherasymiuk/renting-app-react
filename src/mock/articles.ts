@@ -15,7 +15,7 @@ let articles: IArticle[] = [
     text: "Lorem Ipsum is simply dummy text of the printing and industrysLorem Ipsum has been the industrys standard dummy text ever when an unknown printer took a galley.",
     photo:
       "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    userId: 3,
+    userId: 2,
   },
   {
     date: new Date(),

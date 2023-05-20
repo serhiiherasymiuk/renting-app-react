@@ -171,3 +171,8 @@ input:focus {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+
+.logo {
+  width: 150px;
+  height: 60px;
+}
