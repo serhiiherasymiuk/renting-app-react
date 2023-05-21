@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import "./Examples.css";
-import properties from "../../../mock/properties";
-import { IProperty } from "../../../types/property";
-import { IRating } from "../../../types/rating";
-import { Property } from "../../Property";
+import React from "react";
+import { IProperty } from "../types/property";
+import { IRating } from "../types/rating";
 
-export function Examples() {
-  const [recently, setRecently] = useState(properties.slice(0, 3));
+export function Property({ property }: { property: IProperty }) {
   const calculateAverageRating = (ratings: IRating[]) => {
     if (ratings.length === 0) {
       return 0;
@@ -33,15 +29,27 @@ export function Examples() {
     return starIcons;
   };
   return (
-    <div className="Examples">
-      <h2>Here's some examples of reviews</h2>
-      <p>More then 10000 clients who are happy with Us. Are You Next One?</p>
-      <div className="property-container">
-        {recently.map((property: IProperty) => (
-          <Property property={property}></Property>
-        ))}
+    <>
+      <div key={property.id}>
+        <img src={property.photo} alt={property.title} />
+        <div className="property-info">
+          <h4>
+            {property.address} {property.title}
+          </h4>
+          <div>
+            <div className="rating">
+              <div>
+                <h2>{calculateAverageRating(property.ratings)}</h2>
+                <p>{renderStars(calculateAverageRating(property.ratings))}</p>
+              </div>
+              <p>{property.ratings.length} Ratings</p>
+            </div>
+            <div>
+              <i className="bi bi-arrow-right-circle-fill"></i>
+            </div>
+          </div>
+        </div>
       </div>
-      <button>View All</button>
-    </div>
+    </>
   );
 }

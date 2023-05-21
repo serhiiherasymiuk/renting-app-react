@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.css";
 import { Banner } from "./Banner/Banner";
 import { Reasons } from "./Reasons/Reasons";
 import { Works } from "./Works/Works";
