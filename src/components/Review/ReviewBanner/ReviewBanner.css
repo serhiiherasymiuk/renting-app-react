@@ -1,17 +1,21 @@
-.Banner > div {
+.ReviewBanner > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   margin-top: -200px;
-  top: 250px;
+  top: 400px;
   gap: 10px;
 }
 
-.Banner p:nth-child(2) {
+.ReviewBanner h1 {
+  color: #0fb3af;
+}
+
+.ReviewBanner p:nth-child(2) {
   font-size: 20px;
 }
 
-.Banner img {
+.ReviewBanner img {
   width: 100%;
 }

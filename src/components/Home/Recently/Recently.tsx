@@ -5,6 +5,7 @@ import { IProperty } from "../../../types/property";
 import { IRating } from "../../../types/rating";
 
 export function Recently() {
+  const [recently, setRecently] = useState(properties.slice(0, 6));
   const calculateAverageRating = (ratings: IRating[]) => {
     if (ratings.length === 0) {
       return 0;
@@ -36,7 +37,7 @@ export function Recently() {
       <h2>Recently Reviewed</h2>
       <p>More then 10000 clients who are happy with Us. Are You Next One?</p>
       <div className="property-container">
-        {properties.map((property: IProperty) => (
+        {recently.map((property: IProperty) => (
           <div key={property.id}>
             <img src={property.photo} alt={property.title} />
             <div className="property-info">
