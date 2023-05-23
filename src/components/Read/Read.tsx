@@ -7,21 +7,36 @@ import { Property } from "../Property";
 export function Read() {
   const [allProperties, setAllProperties] = useState(properties.slice(0, 12));
   const [sort, setSort] = useState("Most Recent");
+  const [searchQuery, setSearchQuery] = useState("");
   function filterRecent() {
     setSort("Most Recent");
     setAllProperties(
-      [...allProperties].sort((a, b) => {
-        const dateA = new Date(a.date);
-        const dateB = new Date(b.date);
-        return dateB.getTime() - dateA.getTime();
-      })
+      [...properties]
+        .filter((property) =>
+          property.address.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     );
   }
+
   function filterPopular() {
     setSort("Popular");
     setAllProperties(
-      [...allProperties].sort((a, b) => b.ratings.length - a.ratings.length)
+      [...properties]
+        .filter((property) =>
+          property.address.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        .sort((a, b) => b.ratings.length - a.ratings.length)
     );
+  }
+
+  function handleSearch() {
+    if (searchQuery.trim() === "") {
+      setSearchQuery("");
+      setAllProperties([...properties]);
+    } else {
+      filterRecent();
+    }
   }
   return (
     <div className="Read">
@@ -31,8 +46,9 @@ export function Read() {
           <input
             placeholder="Start typing the address of the property"
             type="text"
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button>Search</button>
+          <button onClick={handleSearch}>Search</button>
         </div>
         <div className="button-container dropdown">
           <input readOnly placeholder={sort} type="text" />
