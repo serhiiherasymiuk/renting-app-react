@@ -15,3 +15,11 @@
 .Banner img {
   width: 100%;
 }
+
+.Banner button {
+  margin: 0;
+}
+
+.Banner a {
+  margin-top: 50px;
+}

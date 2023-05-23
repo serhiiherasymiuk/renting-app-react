@@ -3,6 +3,7 @@ import "./OurArticles.css";
 import articles from "../../../mock/articles";
 import users from "../../../mock/users";
 import { IArticle } from "../../../types/article";
+import { Link } from "react-router-dom";
 
 export function OurArticles() {
   const [ourArticles, setOurArticles] = useState(articles.slice(0, 3));
@@ -35,13 +36,17 @@ export function OurArticles() {
                   </p>
                   <p>{article.date.toString().slice(3, 21)}</p>
                 </div>
-                <button className="styled-button">Read More</button>
+                <Link to="/articles">
+                  <button className="styled-button">Read More</button>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <button>View All</button>
+      <Link to="/read">
+        <button>View All</button>
+      </Link>
     </div>
   );
 }

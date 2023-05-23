@@ -4,6 +4,7 @@ import properties from "../../../mock/properties";
 import { IProperty } from "../../../types/property";
 import { IRating } from "../../../types/rating";
 import { Property } from "../../Property";
+import { Link } from "react-router-dom";
 
 export function Examples() {
   const [recently, setRecently] = useState(properties.slice(0, 3));
@@ -41,7 +42,9 @@ export function Examples() {
           <Property property={property}></Property>
         ))}
       </div>
-      <button>View All</button>
+      <Link to={"/read"}>
+        <button>View All</button>
+      </Link>
     </div>
   );
 }

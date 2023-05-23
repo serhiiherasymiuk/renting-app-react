@@ -193,14 +193,6 @@ input:focus {
   font-size: 39.5px;
 }
 
-.styled-a {
-  font-weight: bold;
-  margin-top: 30px;
-  padding: 15px 40px;
-  background-color: #3c3c3b;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
+a {
   text-decoration: none;
 }
