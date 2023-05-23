@@ -11,7 +11,10 @@ let properties: IProperty[] = [
       { id: 1, rate: 1 },
       { id: 2, rate: 1 },
       { id: 3, rate: 3 },
+      { id: 4, rate: 4 },
+      { id: 5, rate: 4 },
     ],
+    date: new Date("2023-05-22"),
   },
   {
     id: 2,
@@ -19,11 +22,8 @@ let properties: IProperty[] = [
     address: "456 Ocean Avenue",
     photo:
       "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    ratings: [
-      { id: 4, rate: 4 },
-      { id: 5, rate: 4 },
-      { id: 6, rate: 5 },
-    ],
+    ratings: [{ id: 6, rate: 5 }],
+    date: new Date("2023-05-21"),
   },
   {
     id: 3,
@@ -36,6 +36,7 @@ let properties: IProperty[] = [
       { id: 8, rate: 3 },
       { id: 9, rate: 4 },
     ],
+    date: new Date("2023-05-20"),
   },
   {
     id: 4,
@@ -48,6 +49,7 @@ let properties: IProperty[] = [
       { id: 11, rate: 5 },
       { id: 12, rate: 4 },
     ],
+    date: new Date("2023-05-19"),
   },
   {
     id: 5,
@@ -59,7 +61,9 @@ let properties: IProperty[] = [
       { id: 13, rate: 4 },
       { id: 14, rate: 4 },
       { id: 15, rate: 3 },
+      { id: 16, rate: 4 },
     ],
+    date: new Date("2023-05-18"),
   },
   {
     id: 6,
@@ -68,10 +72,12 @@ let properties: IProperty[] = [
     photo:
       "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     ratings: [
-      { id: 16, rate: 4 },
       { id: 17, rate: 5 },
       { id: 18, rate: 3 },
+      { id: 19, rate: 3 },
+      { id: 20, rate: 3 },
     ],
+    date: new Date(),
   },
 ];
 
