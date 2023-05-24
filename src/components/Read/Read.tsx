@@ -4,9 +4,24 @@ import properties from "../../mock/properties";
 import { IProperty } from "../../types/property";
 import { Property } from "../Property";
 import { IRating } from "../../types/rating";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  increment,
+  decrement,
+  reset,
+  selectProperties,
+} from "../../store/reducers/property.reducer";
 
 export function Read() {
-  const [allProperties, setAllProperties] = useState(properties.slice(0, 40));
+  const dispatch = useDispatch();
+
+  const plus = () => dispatch(increment());
+  const minus = () => dispatch(decrement());
+  const clear = () => dispatch(reset());
+
+  const allProperties = useSelector(selectProperties);
+  const [filteredProperties, setFilteredProperties] =
+    useState<IProperty[]>(allProperties);
   const [sort, setSort] = useState("Most Recent");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -21,45 +36,47 @@ export function Read() {
 
   function filterRecent() {
     setSort("Most Recent");
-    setAllProperties(
-      [...properties]
-        .filter((property) =>
-          property.address.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    );
+    const filtered = [...allProperties]
+      .filter((property) =>
+        (property.address + property.title)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    setFilteredProperties(filtered);
   }
 
   function filterPopular() {
     setSort("Popular");
-    setAllProperties(
-      [...properties]
-        .filter((property) =>
-          property.address.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-        .sort((a, b) => b.ratings.length - a.ratings.length)
-    );
+    const filtered = [...allProperties]
+      .filter((property) =>
+        (property.address + property.title)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+      .sort((a, b) => b.ratings.length - a.ratings.length);
+    setFilteredProperties(filtered);
   }
 
   function filterBest() {
     setSort("Best");
-    setAllProperties(
-      [...properties]
-        .filter((property) =>
-          property.address.toLowerCase().includes(searchQuery.toLowerCase())
-        )
-        .sort(
-          (a, b) =>
-            calculateAverageRating(b.ratings) -
-            calculateAverageRating(a.ratings)
-        )
-    );
+    const filtered = [...allProperties]
+      .filter((property) =>
+        (property.address + property.title)
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+      .sort(
+        (a, b) =>
+          calculateAverageRating(b.ratings) - calculateAverageRating(a.ratings)
+      );
+    setFilteredProperties(filtered);
   }
 
   function handleSearch() {
     if (searchQuery.trim() === "") {
       setSearchQuery("");
-      setAllProperties([...properties]);
+      setFilteredProperties([...allProperties]);
     } else {
       filterRecent();
     }
@@ -90,8 +107,8 @@ export function Read() {
         </div>
       </div>
       <div className="property-container">
-        {allProperties.map((property: IProperty) => (
-          <Property property={property}></Property>
+        {filteredProperties.map((property: IProperty) => (
+          <Property key={property.id} property={property} />
         ))}
       </div>
     </div>

@@ -22,7 +22,6 @@ export function Property({ property }: { property: IProperty }) {
     if (hasHalfStar) {
       starIcons.push(<i className="bi bi-star-half"></i>);
     }
-    console.log(starIcons.length);
     if (starIcons.length < 5) {
       while (starIcons.length < 5)
         starIcons.push(<i className="bi bi-star"></i>);
