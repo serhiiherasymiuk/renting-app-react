@@ -5,25 +5,17 @@ import { IProperty } from "../../types/property";
 import { Property } from "../Property";
 import { IRating } from "../../types/rating";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  increment,
-  decrement,
-  reset,
-  selectProperties,
-} from "../../store/reducers/property.reducer";
+import { selectAllProperties } from "../../store/reducers/property.reducer";
 
 export function Read() {
-  const dispatch = useDispatch();
-
-  const plus = () => dispatch(increment());
-  const minus = () => dispatch(decrement());
-  const clear = () => dispatch(reset());
-
-  const allProperties = useSelector(selectProperties);
+  const allProperties = useSelector(selectAllProperties);
   const [filteredProperties, setFilteredProperties] =
     useState<IProperty[]>(allProperties);
   const [sort, setSort] = useState("Most Recent");
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 12;
+  const pageRange = 3;
 
   const calculateAverageRating = (ratings: IRating[]) => {
     if (ratings.length === 0) {
@@ -77,10 +69,66 @@ export function Read() {
     if (searchQuery.trim() === "") {
       setSearchQuery("");
       setFilteredProperties([...allProperties]);
-    } else {
-      filterRecent();
     }
+    filterRecent();
   }
+
+  const indexOfLastProperty = currentPage * propertiesPerPage;
+  const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
+  const currentProperties = filteredProperties.slice(
+    indexOfFirstProperty,
+    indexOfLastProperty
+  );
+
+  const previousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const nextPage = () => {
+    const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToFirstPage = () => {
+    setCurrentPage(1);
+  };
+
+  const goToLastPage = () => {
+    const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+    setCurrentPage(totalPages);
+  };
+
+  const renderPageNumbers = () => {
+    const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+    const currentPageIndex = currentPage - 1;
+    let startPageIndex = Math.max(
+      0,
+      currentPageIndex - Math.floor(pageRange / 2)
+    );
+    let endPageIndex = Math.min(startPageIndex + pageRange - 1, totalPages - 1);
+
+    if (endPageIndex - startPageIndex < pageRange - 1) {
+      startPageIndex = Math.max(0, endPageIndex - pageRange + 1);
+    }
+
+    const pageNumbers = [];
+    for (let i = startPageIndex; i <= endPageIndex; i++) {
+      pageNumbers.push(
+        <li
+          key={i + 1}
+          onClick={() => setCurrentPage(i + 1)}
+          className={currentPage === i + 1 ? "active" : ""}
+        >
+          {i + 1}
+        </li>
+      );
+    }
+    return pageNumbers;
+  };
 
   return (
     <div className="Read">
@@ -107,9 +155,28 @@ export function Read() {
         </div>
       </div>
       <div className="property-container">
-        {filteredProperties.map((property: IProperty) => (
+        {currentProperties.map((property: IProperty) => (
           <Property key={property.id} property={property} />
         ))}
+      </div>
+      <div className="pagination">
+        {filteredProperties.length > propertiesPerPage && (
+          <ul>
+            <li onClick={goToFirstPage}>
+              <i className="bi bi-chevron-double-left"></i>
+            </li>
+            <li onClick={previousPage}>
+              <i className="bi bi-chevron-left"></i>
+            </li>
+            {renderPageNumbers()}
+            <li onClick={nextPage}>
+              <i className="bi bi-chevron-right"></i>
+            </li>
+            <li onClick={goToLastPage}>
+              <i className="bi bi-chevron-double-right"></i>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );

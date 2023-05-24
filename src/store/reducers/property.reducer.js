@@ -9,28 +9,60 @@ export const propertyReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case COUNTER_ACTION_TYPES.INCREMENT:
+    case PROPERTY_ACTION_TYPES.ADD_PROPERTY:
       return {
         ...state,
-        count: state.count + 1,
+        properties: [...state.properties, payload],
       };
-    case COUNTER_ACTION_TYPES.DECREMENT:
-      return { ...state, count: state.count - 1 };
-    case COUNTER_ACTION_TYPES.RESET:
-      return { ...state, count: 1 };
+    case PROPERTY_ACTION_TYPES.REMOVE_PROPERTY:
+      return {
+        ...state,
+        properties: state.properties.filter(
+          (property) => property.id !== payload
+        ),
+      };
+    case PROPERTY_ACTION_TYPES.UPDATE_PROPERTY:
+      return {
+        ...state,
+        properties: state.properties.map((property) => {
+          if (property.id === payload.id) {
+            return { ...property, ...payload.changes };
+          } else {
+            return property;
+          }
+        }),
+      };
     default:
       return state;
   }
 };
 
-export const COUNTER_ACTION_TYPES = {
-  INCREMENT: "INCREMENT",
-  DECREMENT: "DECREMENT",
-  RESET: "RESET",
+export const PROPERTY_ACTION_TYPES = {
+  ADD_PROPERTY: "ADD_PROPERTY",
+  REMOVE_PROPERTY: "REMOVE_PROPERTY",
+  UPDATE_PROPERTY: "UPDATE_PROPERTY",
 };
 
-export const increment = () => ({ type: COUNTER_ACTION_TYPES.INCREMENT });
-export const decrement = () => ({ type: COUNTER_ACTION_TYPES.DECREMENT });
-export const reset = () => ({ type: COUNTER_ACTION_TYPES.RESET });
+export const addProperty = (property) => ({
+  type: PROPERTY_ACTION_TYPES.ADD_PROPERTY,
+  payload: property,
+});
 
-export const selectProperties = (store) => store.property.properties;
+export const removeProperty = (propertyId) => ({
+  type: PROPERTY_ACTION_TYPES.REMOVE_PROPERTY,
+  payload: propertyId,
+});
+
+export const updateProperty = (propertyId, changes) => ({
+  type: PROPERTY_ACTION_TYPES.UPDATE_PROPERTY,
+  payload: { id: propertyId, changes },
+});
+
+export const selectAllProperties = (store) => store.property.properties;
+
+export const selectPropertiesByPage = (store, pageNumber, pageSize) => {
+  const allProperties = selectAllProperties(store);
+  const startIndex = (pageNumber - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  return allProperties.slice(startIndex, endIndex);
+};
