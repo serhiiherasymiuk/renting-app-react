@@ -1,0 +1,20 @@
+.RegisterForm {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.RegisterForm h1 {
+  margin-bottom: 10px;
+}
+
+.RegisterForm button {
+  background-color: #0fb3af;
+  margin-top: 0;
+}
+
+.RegisterForm hr {
+  width: 450px;
+}

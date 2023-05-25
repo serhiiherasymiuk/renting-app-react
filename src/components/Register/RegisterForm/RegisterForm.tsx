@@ -1,14 +1,15 @@
 import React from "react";
-import "./LoginForm.css";
+import "./RegisterForm.css";
 import { Link } from "react-router-dom";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormData = {
+  name: string;
   email: string;
   password: string;
 };
 
-export function LoginForm() {
+export function RegisterForm() {
   const {
     register,
     handleSubmit,
@@ -17,6 +18,7 @@ export function LoginForm() {
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
     const newAccount = {
+      name: data.name,
       email: data.email,
       password: data.password,
     };
@@ -24,9 +26,18 @@ export function LoginForm() {
   };
 
   return (
-    <div className="LoginForm">
-      <h1>Log In Please</h1>
+    <div className="RegisterForm">
+      <h1>Sign up Now</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-container">
+          <i className="bi bi-person"></i>
+          <input
+            {...register("name", { required: true })}
+            name="name"
+            placeholder="Full name here"
+            type="text"
+          />
+        </div>
         <div className="input-container">
           <i className="bi bi-envelope"></i>
           <input
@@ -45,20 +56,17 @@ export function LoginForm() {
             type="password"
           />
         </div>
-        <div className="checkbox-container">
-          <div>
-            <input type="checkbox" />
-            <p>Remember Password?</p>
-          </div>
-          <p>Forgot Password?</p>
+        <div className="input-container">
+          <i className="bi bi-key"></i>
+          <input placeholder="Confirm password" type="password" />
         </div>
-        <button type="submit">Log In</button>
+        <button type="submit">Submit</button>
       </form>
       <hr />
       <p>
-        Don`t have an account?
-        <Link to={"/register"}>
-          <span> SIGN UP</span>
+        Already have an account?
+        <Link to={"/login"}>
+          <span> SIGN In</span>
         </Link>
       </p>
     </div>
