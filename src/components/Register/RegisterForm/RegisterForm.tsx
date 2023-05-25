@@ -24,6 +24,7 @@ export function RegisterForm() {
     };
     console.log(newAccount);
   };
+
   return (
     <div className="RegisterForm">
       <h1>Sign up Now</h1>
