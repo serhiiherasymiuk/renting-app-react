@@ -63,6 +63,10 @@ h2 {
   padding-bottom: 20px;
 }
 
+span {
+  color: #0fb3af;
+}
+
 h3 {
   margin: 0;
   font-size: 20px;
@@ -195,4 +199,55 @@ input:focus {
 
 a {
   text-decoration: none;
+}
+
+.input-container input {
+  width: 400px;
+  border: solid 1px #3c3c3b;
+  border-radius: 10px;
+  border-left: solid 5px #3c3c3b;
+  box-shadow: 0px 0px 10px rgb(189, 189, 189);
+}
+
+.input-container input {
+  padding-left: 50px;
+  margin-right: 30px;
+}
+
+.input-container i {
+  font-size: 25px;
+  position: relative;
+  left: 45px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.bi-key {
+  transform: rotate(30deg);
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+}
+
+input:after {
+  background-color: #3c3c3b;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 130px;
+}
+
+.checkbox-container div {
+  display: flex;
+  gap: 15px;
+}
+
+.checkbox-container > p:hover {
+  cursor: pointer;
 }

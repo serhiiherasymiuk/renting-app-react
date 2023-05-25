@@ -1,0 +1,20 @@
+.LoginForm {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.LoginForm h1 {
+  margin-bottom: 10px;
+}
+
+.LoginForm button {
+  background-color: #0fb3af;
+  margin-top: 0;
+}
+
+.LoginForm hr {
+  width: 450px;
+}
