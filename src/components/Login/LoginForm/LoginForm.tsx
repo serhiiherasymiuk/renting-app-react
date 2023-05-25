@@ -8,11 +8,11 @@ export function LoginForm() {
       <h1>Log In Please</h1>
       <div className="input-container">
         <i className="bi bi-envelope"></i>
-        <input placeholder="Enter Your email address here" type="text" />
+        <input placeholder="Enter Your email address here" type="email" />
       </div>
       <div className="input-container">
         <i className="bi bi-key"></i>
-        <input placeholder="Enter Your password here" type="text" />
+        <input placeholder="Enter Your password here" type="password" />
       </div>
       <div className="checkbox-container">
         <div>
