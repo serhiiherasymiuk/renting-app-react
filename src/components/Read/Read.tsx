@@ -95,11 +95,13 @@ export function Read() {
 
   const goToFirstPage = () => {
     setCurrentPage(1);
+    window.scrollTo(0, 0);
   };
 
   const goToLastPage = () => {
     const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
     setCurrentPage(totalPages);
+    window.scrollTo(0, 0);
   };
 
   const renderPageNumbers = () => {
@@ -111,8 +113,9 @@ export function Read() {
     );
     let endPageIndex = Math.min(startPageIndex + pageRange - 1, totalPages - 1);
 
-    if (endPageIndex - startPageIndex < pageRange - 1) {
-      startPageIndex = Math.max(0, endPageIndex - pageRange + 1);
+    if (currentPage === totalPages && totalPages >= pageRange) {
+      startPageIndex = Math.max(0, totalPages - pageRange);
+      endPageIndex = totalPages - 1;
     }
 
     const pageNumbers = [];
