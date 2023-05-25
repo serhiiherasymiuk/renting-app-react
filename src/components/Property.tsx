@@ -23,7 +23,7 @@ export function Property({ property }: { property: IProperty }) {
       starIcons.push(<i className="bi bi-star-half"></i>);
     }
     if (starIcons.length < 5) {
-      for (let i = 0; i < 5 - starIcons.length; i++)
+      while (starIcons.length < 5)
         starIcons.push(<i className="bi bi-star"></i>);
     }
     return starIcons;

@@ -9,6 +9,7 @@ import reviews from "../../../materials/reviews.png";
 import review from "../../../materials/review.png";
 import ratings from "../../../materials/ratings.png";
 import rating from "../../../materials/rating.png";
+import { Link } from "react-router-dom";
 
 export function Works() {
   return (
@@ -33,9 +34,11 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button className="styled-button">
-                Know More <img src={arrow} alt="" />
-              </button>
+              <Link to={"/review"}>
+                <button className="styled-button">
+                  Know More <img src={arrow} alt="" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -50,9 +53,11 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button className="styled-button">
-                Know More <img src={arrow} alt="" />
-              </button>
+              <Link to={"/review"}>
+                <button className="styled-button">
+                  Know More <img src={arrow} alt="" />
+                </button>
+              </Link>
             </div>
             <img className="icon" src={review} alt="" />
           </div>
@@ -71,14 +76,18 @@ export function Works() {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make
               </p>
-              <button className="styled-button">
-                Know More <img src={arrow} alt="" />
-              </button>
+              <Link to={"/review"}>
+                <button className="styled-button">
+                  Know More <img src={arrow} alt="" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      <button>Get Started</button>
+      <Link to={"/review"}>
+        <button>Get Started</button>
+      </Link>
     </div>
   );
 }

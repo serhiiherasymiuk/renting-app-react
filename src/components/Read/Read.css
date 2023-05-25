@@ -1,0 +1,82 @@
+.Read {
+  margin-top: 50px;
+}
+
+.pagination {
+  margin-top: 50px;
+}
+
+.pagination ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination ul li,
+.pagination ul i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.pagination ul li {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination .active {
+  background-color: #0fb3af;
+  color: white;
+}
+
+.dropdown > input {
+  width: 100px;
+}
+
+.dropdown > button {
+  padding: 0;
+  width: 70px;
+  margin: 0;
+}
+
+.inputs {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 150px;
+}
+
+.dropdown {
+  align-items: center;
+  display: flex;
+}
+
+.dropdown-content {
+  width: 200px;
+  margin-top: 185px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content button {
+  margin: 0;
+}
+
+.dropdown:hover .dropdown-content {
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown:hover .dropdown-content button {
+  width: 190px;
+}

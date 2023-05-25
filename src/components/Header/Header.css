@@ -31,13 +31,13 @@
   margin: 0;
 }
 
-a {
+.Header a {
   display: inline-block;
   text-decoration: none;
   color: black;
 }
 
-a::after {
+.Header a::after {
   content: "";
   display: block;
   width: 0;
@@ -46,6 +46,6 @@ a::after {
   transition: width 0.3s;
 }
 
-a:hover::after {
+.Header a:hover::after {
   width: 100%;
 }
