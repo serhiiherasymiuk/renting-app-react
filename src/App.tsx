@@ -7,6 +7,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { Review } from "./components/Review/Review";
 import { Read } from "./components/Read/Read";
+import { Login } from "./components/Login/Login";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/review" element={<Review />} />
           <Route path="/read" element={<Read />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <footer>

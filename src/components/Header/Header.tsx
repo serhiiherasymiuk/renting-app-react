@@ -39,7 +39,9 @@ export function Header() {
           </Link>
         </li>
       </ul>
-      <button>Log In</button>
+      <Link to={"/login"}>
+        <button>Log In</button>
+      </Link>
     </div>
   );
 }

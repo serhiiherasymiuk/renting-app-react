@@ -49,3 +49,7 @@
 .Header a:hover::after {
   width: 100%;
 }
+
+.Header a:last-child::after {
+  display: none;
+}
