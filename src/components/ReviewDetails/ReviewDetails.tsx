@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./ReviewDetails.css";
+import { LeaveReplay } from "../LeaveReplay/LeaveReplay";
 
 export function ReviewDetails() {
   const { id } = useParams();
@@ -11,7 +12,7 @@ export function ReviewDetails() {
   return (
     <div className="ReviewDetails">
       <img src={review.photo} alt="" />
-      <div>
+      <div className="review-title">
         <h1>{review.title}</h1>
         <h1>{review.address}</h1>
       </div>
@@ -19,6 +20,7 @@ export function ReviewDetails() {
       {paragraphs.map((paragraph: string, index: number) => (
         <p key={index}>{paragraph}</p>
       ))}
+      <LeaveReplay ratings={review.ratings}></LeaveReplay>
     </div>
   );
 }
