@@ -20,6 +20,7 @@ export function LeaveReplay({
     const total = ratings?.length ?? 0;
     const count = ratings?.filter((replay) => replay.rate === rate).length ?? 0;
     const percentage = (count / total) * 100;
+    if (!percentage) return `0%`;
     return `${percentage.toFixed(0)}%`;
   };
 
