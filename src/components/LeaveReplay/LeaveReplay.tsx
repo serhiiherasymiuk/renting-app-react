@@ -1,8 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./LeaveReplay.css";
 import { IRating } from "../../types/rating";
+import { addRating } from "../../store/reducers/property.reducer";
+import { useDispatch } from "react-redux";
 
-export function LeaveReplay({ ratings }: { ratings?: IRating[] }) {
+export function LeaveReplay({
+  ratings: initialRatings,
+  propertyId,
+}: {
+  ratings?: IRating[];
+  propertyId: number;
+}) {
+  const [ratings, setRatings] = useState(initialRatings);
+  useEffect(() => {
+    setRatings(initialRatings);
+  }, [initialRatings]);
+  const dispatch = useDispatch();
   const calculatePercentage = (rate: number): string => {
     const total = ratings?.length ?? 0;
     const count = ratings?.filter((replay) => replay.rate === rate).length ?? 0;
@@ -37,6 +50,14 @@ export function LeaveReplay({ ratings }: { ratings?: IRating[] }) {
     setSelectedRating(rating);
   };
 
+  function handleSubmit() {
+    const rating = { id: 1, rate: selectedRating };
+    dispatch(addRating(propertyId, rating));
+    setRatings((prevRatings) =>
+      prevRatings ? [...prevRatings, rating] : [rating]
+    );
+  }
+
   return (
     <div className="LeaveReplay">
       <div className="leave-replay">
@@ -54,7 +75,9 @@ export function LeaveReplay({ ratings }: { ratings?: IRating[] }) {
             ></i>
           ))}
         </div>
-        <button className="styled-button">Post Replay</button>
+        <button onClick={handleSubmit} className="styled-button">
+          Post Replay
+        </button>
       </div>
       <div>
         <h2>Average Rating</h2>

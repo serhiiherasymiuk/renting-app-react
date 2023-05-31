@@ -20,7 +20,10 @@ export function ReviewDetails() {
       {paragraphs.map((paragraph: string, index: number) => (
         <p key={index}>{paragraph}</p>
       ))}
-      <LeaveReplay ratings={review.ratings}></LeaveReplay>
+      <LeaveReplay
+        propertyId={review.id}
+        ratings={review.ratings}
+      ></LeaveReplay>
     </div>
   );
 }

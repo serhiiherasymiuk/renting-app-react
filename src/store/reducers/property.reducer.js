@@ -32,6 +32,20 @@ export const propertyReducer = (state = INITIAL_STATE, action) => {
           }
         }),
       };
+    case PROPERTY_ACTION_TYPES.ADD_RATING:
+      return {
+        ...state,
+        properties: state.properties.map((property) => {
+          if (property.id === payload.propertyId) {
+            return {
+              ...property,
+              ratings: [...property.ratings, payload.rating],
+            };
+          } else {
+            return property;
+          }
+        }),
+      };
     default:
       return state;
   }
@@ -41,6 +55,7 @@ export const PROPERTY_ACTION_TYPES = {
   ADD_PROPERTY: "ADD_PROPERTY",
   REMOVE_PROPERTY: "REMOVE_PROPERTY",
   UPDATE_PROPERTY: "UPDATE_PROPERTY",
+  ADD_RATING: "ADD_RATING",
 };
 
 export const addProperty = (property) => ({
@@ -56,6 +71,11 @@ export const removeProperty = (propertyId) => ({
 export const updateProperty = (propertyId, changes) => ({
   type: PROPERTY_ACTION_TYPES.UPDATE_PROPERTY,
   payload: { id: propertyId, changes },
+});
+
+export const addRating = (propertyId, rating) => ({
+  type: PROPERTY_ACTION_TYPES.ADD_RATING,
+  payload: { propertyId, rating },
 });
 
 export const selectAllProperties = (store) => store.property.properties;
