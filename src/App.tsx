@@ -9,6 +9,7 @@ import { Review } from "./components/Review/Review";
 import { Read } from "./components/Read/Read";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
+import { ReviewDetails } from "./components/ReviewDetails/ReviewDetails";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/read" element={<Read />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/review/:id" element={<ReviewDetails />} />
         </Routes>
       </main>
       <footer>

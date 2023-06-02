@@ -7,4 +7,5 @@ export interface IProperty {
   photo: string;
   ratings: IRating[];
   date: Date;
+  text: string;
 }

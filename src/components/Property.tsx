@@ -1,6 +1,7 @@
 import React from "react";
 import { IProperty } from "../types/property";
 import { IRating } from "../types/rating";
+import { Link } from "react-router-dom";
 
 export function Property({ property }: { property: IProperty }) {
   const calculateAverageRating = (ratings: IRating[]) => {
@@ -44,9 +45,11 @@ export function Property({ property }: { property: IProperty }) {
               </div>
               <p>{property.ratings.length} Ratings</p>
             </div>
-            <div>
-              <i className="bi bi-arrow-right-circle-fill"></i>
-            </div>
+            <Link to={`/review/${property.id}`} state={{ review: property }}>
+              <div>
+                <i className="bi bi-arrow-right-circle-fill"></i>
+              </div>
+            </Link>
           </div>
         </div>
       </div>

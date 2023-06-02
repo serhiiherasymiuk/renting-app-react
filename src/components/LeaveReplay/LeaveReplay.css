@@ -1,0 +1,40 @@
+.LeaveReplay {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 300px;
+  margin-top: 100px;
+}
+
+.LeaveReplay h2 {
+  text-align: left;
+}
+
+.LeaveReplay p {
+  text-align: left;
+}
+
+.leave-replay > div {
+  display: flex;
+  justify-content: start;
+}
+
+.leave-replay > div i {
+  font-size: 40px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.rating-percentage > div {
+  display: flex;
+  gap: 5px;
+}
+
+.rating-percentage p:last-child {
+  width: 50px;
+}
+
+.leave-replay {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
