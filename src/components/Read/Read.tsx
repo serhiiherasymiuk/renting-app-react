@@ -14,7 +14,7 @@ export function Read() {
   const [sort, setSort] = useState("Most Recent");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const propertiesPerPage = 12;
+  const propertiesPerPage = 3;
   const pageRange = 3;
 
   const calculateAverageRating = (ratings: IRating[]) => {

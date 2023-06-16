@@ -30,14 +30,6 @@ export function Header() {
             Read Reviews
           </Link>
         </li>
-        <li>
-          <Link
-            to="/articles"
-            className={location.pathname === "/articles" ? "active" : ""}
-          >
-            Articles
-          </Link>
-        </li>
       </ul>
       <Link to={"/login"}>
         <button>Log In</button>
