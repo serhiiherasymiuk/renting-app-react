@@ -36,7 +36,7 @@ export function OurArticles() {
                   </p>
                   <p>{article.date.toString().slice(3, 21)}</p>
                 </div>
-                <Link to="/articles">
+                <Link to="/read">
                   <button className="styled-button">Read More</button>
                 </Link>
               </div>
